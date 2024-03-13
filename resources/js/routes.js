@@ -1,4 +1,8 @@
 import Dashboard from './components/Dashboard.vue';
+import ListAppointments from './pages/appointments/ListAppointments.vue';
+import ListUsers from './pages/users/ListUsers.vue';
+import UpdateSettings from './pages/settings/UpdateSettings.vue';
+import UpdateProfile from './pages/profile/UpdateProfile.vue';
 
 export default [
     {
@@ -7,8 +11,28 @@ export default [
         component: Dashboard,
     },
     {
-        path: '/admin/dashboard',
-        name: '/admin.dashboard',
+        path: '/admin/appointments',
+        name: '/admin.appointments',
+        component: ListAppointments,
+    },
+    {
+        path: '/admin/users',
+        name: '/admin.users',
+        component: ListUsers,
+    },
+    {
+        path: '/admin/settings',
+        name: '/admin.settings',
+        component: UpdateSettings,
+    },
+    {
+        path: '/admin/profile',
+        name: '/admin.profile',
         component: Dashboard,
-    }    
+    },       
+    {
+        path: '/admin/logout',
+        name: '/admin.logout',
+        component: Dashboard,
+    }     
 ]
