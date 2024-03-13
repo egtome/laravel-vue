@@ -10,10 +10,17 @@ class UserController extends Controller
 {
     public function index()
     {
-        //$users = User::orderBy('created_at', 'asc')->get();
-        $users = User::latest()->get();
-        //$users = User::oldest()->get();
-
-        return $users;
+        //$users = User::latest()->get();
+        //$users = User::oldest()->get();        
+        return User::orderBy('id', 'asc')->get();
     }
+
+    public function store()
+    {
+        return User::create([
+            'name' => request('name'),
+            'email' => request('email'),
+            'password' => bcrypt(request('password')),
+        ]);
+    }    
 }
