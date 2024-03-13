@@ -28,7 +28,7 @@ export default [
     {
         path: '/admin/profile',
         name: '/admin.profile',
-        component: Dashboard,
+        component: UpdateProfile,
     },       
     {
         path: '/admin/logout',
